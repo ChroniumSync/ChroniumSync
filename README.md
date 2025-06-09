@@ -84,6 +84,8 @@ function chronoAlign(transactionData) {
     : 'Transaction Synchronized';
 }
 ```
+#### Description: Compares transaction timestamps to current system time.
+
 ### 2. MomentTrack — Real-Time Data Alignment
 
 ```js

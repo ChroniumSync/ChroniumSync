@@ -1,5 +1,4 @@
-# Create README.md content from the visual screenshots
-readme_content = """
+
 # ⏱️ ChroniumSync: Time-Synchronized Blockchain Monitoring
 
 ## 🌐 Overview

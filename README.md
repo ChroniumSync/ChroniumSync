@@ -4,7 +4,7 @@
 ## 🌐 Overview
 
 **ChroniumSync** aligns blockchain operations with real-world time.  
-It detects timestamp anomalies, ensures transaction accuracy, and preserves the integrity of time-sensitive on-chain activity.
+It detects timestamp anomalies, ensures transaction accuracy, and preserves the integrity of time-sensitive on-chain activity
 
 ---
 

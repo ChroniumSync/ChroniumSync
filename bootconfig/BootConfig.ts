@@ -12,7 +12,7 @@ const configSchema = z.object({
   AZURE_STORAGE_CONNECTION_STRING: z.string(),
 })
 
-type BootConfig = {
+export type BootConfig = {
   port: number
   logLevel: "debug" | "info" | "warn" | "error"
   solanaRpcEndpoint: string
@@ -22,14 +22,24 @@ type BootConfig = {
 }
 
 export function loadConfig(): BootConfig {
-  const env = configSchema.parse(process.env)
+  const parsed = configSchema.safeParse(process.env)
+
+  if (!parsed.success) {
+    console.error("❌ Config validation failed:", parsed.error.format())
+    throw new Error("Invalid environment configuration")
+  }
+
+  const env = parsed.data
+  const port = parseInt(env.PORT, 10)
+
+  if (isNaN(port) || port <= 0) {
+    throw new Error(`Invalid PORT number: ${env.PORT}`)
+  }
 
   return {
-    port: parseInt(env.PORT, 10),
+    port,
     logLevel: env.LOG_LEVEL,
     solanaRpcEndpoint: env.SOLANA_RPC_ENDPOINT,
     dexApiBase: env.DEX_API_BASE,
     scannerApiBaseUrl: env.SCANNER_API_BASE_URL,
-    azureStorageConnectionString: env.AZURE_STORAGE_CONNECTION_STRING,
-  }
-}
+    azureStorageConnectionString: env.AZUR

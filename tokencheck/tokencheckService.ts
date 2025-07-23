@@ -14,11 +14,7 @@ export class TokenCheckService {
     this.connection = new Connection(rpcUrl);
   }
 
-  /**
-   * Retrieves parsed token accounts for a given owner address.
-   * @param ownerAddress - The public key of the wallet owner.
-   * @param commitment - The RPC commitment level (default: 'confirmed').
-   */
+
   async getTokenAccountsByOwner(
     ownerAddress: string,
     commitment: Commitment = "confirmed"

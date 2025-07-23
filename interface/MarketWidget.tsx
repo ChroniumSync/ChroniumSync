@@ -12,7 +12,6 @@ interface WidgetProps {
 }
 
 export const MarketSentimentWidget: React.FC<WidgetProps> = ({ data }) => {
-  // categorize results into sentiment buckets
   const buckets: Record<string, number> = {
     Low: 0,
     Medium: 0,

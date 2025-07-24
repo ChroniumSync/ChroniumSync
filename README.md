@@ -9,11 +9,15 @@ It detects timestamp anomalies, ensures transaction accuracy, and preserves the 
 ---
 
 ## 🌐 Official Links
-[Twitter (X)](https://x.com/ChroniumSync)
-[Website](https://www.chroniumsync.com/)
-[Chrome](https://chromewebstore.google.com/detail/chroniumsync/omchomfoamekfbdlldcjnnapamakegfa)
-[Docs](https://chroniumsync.gitbook.io/chroniumsync/)
-[Telegram](https://t.me/chroniumsync)
+-[Twitter (X)](https://x.com/ChroniumSync)
+
+-[Website](https://www.chroniumsync.com/)
+
+-[Chrome](https://chromewebstore.google.com/detail/chroniumsync/omchomfoamekfbdlldcjnnapamakegfa)
+
+-[Docs](https://chroniumsync.gitbook.io/chroniumsync/)
+
+-[Telegram](https://t.me/chroniumsync)
 ---
 ## ✨ Key Features
 

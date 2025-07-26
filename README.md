@@ -17,7 +17,7 @@ It detects timestamp anomalies, ensures transaction accuracy, and preserves the 
 
 -[Docs](https://chroniumsync.gitbook.io/chroniumsync/)
 
--[Telegram](https://t.me/chroniumsync)
+-[Telegram](https://t.me/chroniumsyncai)
 
 ---
 ## ✨ Key Features

@@ -1,15 +1,42 @@
-export function timeAgo(timestamp: number | string | Date): string {
-  const time = new Date(timestamp).getTime()
-  if (isNaN(time)) return "Invalid date"
+export function timeAgo(input: number | string | Date): string {
+  const date = new Date(input)
+  const now = Date.now()
+  const then = date.getTime()
+  if (isNaN(then)) return "Invalid date"
 
-  const diff = Date.now() - time
+  const diffMs = now - then
+  const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" })
 
-  const minutes = Math.floor(diff / 60000)
-  const hours = Math.floor(diff / 3600000)
-  const days = Math.floor(diff / 86400000)
+  const seconds = Math.floor(diffMs / 1000)
+  if (seconds < 60) {
+    return rtf.format(-seconds, "second")
+  }
 
-  if (diff < 60000) return "Just now"
-  if (diff < 3600000) return `${minutes} min${minutes !== 1 ? "s" : ""} ago`
-  if (diff < 86400000) return `${hours} hour${hours !== 1 ? "s" : ""} ago`
-  return `${days} day${days !== 1 ? "s" : ""} ago`
+  const minutes = Math.floor(seconds / 60)
+  if (minutes < 60) {
+    return rtf.format(-minutes, "minute")
+  }
+
+  const hours = Math.floor(minutes / 60)
+  if (hours < 24) {
+    return rtf.format(-hours, "hour")
+  }
+
+  const days = Math.floor(hours / 24)
+  if (days < 7) {
+    return rtf.format(-days, "day")
+  }
+
+  const weeks = Math.floor(days / 7)
+  if (weeks < 4) {
+    return rtf.format(-weeks, "week")
+  }
+
+  const months = Math.floor(days / 30)
+  if (months < 12) {
+    return rtf.format(-months, "month")
+  }
+
+  const years = Math.floor(days / 365)
+  return rtf.format(-years, "year")
 }
